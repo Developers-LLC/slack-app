@@ -72,3 +72,7 @@
 
 ## Landing Page
 - [x] Professional landing page with login CTA
+
+## Documentation
+- [x] user_guide.md - End-user guide for the Slack app
+- [x] developer_guide.md - Technical developer guide for the Slack app
