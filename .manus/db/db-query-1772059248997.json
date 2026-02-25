@@ -1,0 +1,9 @@
+{
+  "query": "INSERT INTO channels (name, description, type, createdBy, isArchived) VALUES ('general', 'Company-wide announcements and work-based matters', 'public', 1, false); INSERT INTO channels (name, description, type, createdBy, isArchived) VALUES ('random', 'Non-work banter and water cooler conversation', 'public', 1, false); INSERT INTO channels (name, description, type, createdBy, isArchived) VALUES ('engineering', 'Engineering team discussions', 'public', 1, false);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3zbWDt6ojYujPWx.90374b62ac33 --database kfwzqu7hYQe99YqbXVh5nv --execute INSERT INTO channels (name, description, type, createdBy, isArchived) VALUES ('general', 'Company-wide announcements and work-based matters', 'public', 1, false); INSERT INTO channels (name, description, type, createdBy, isArchived) VALUES ('random', 'Non-work banter and water cooler conversation', 'public', 1, false); INSERT INTO channels (name, description, type, createdBy, isArchived) VALUES ('engineering', 'Engineering team discussions', 'public', 1, false);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 154
+}

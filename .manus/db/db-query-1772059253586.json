@@ -1,0 +1,9 @@
+{
+  "query": "INSERT IGNORE INTO channel_members (channelId, userId, role) SELECT c.id, u.id, 'member' FROM channels c CROSS JOIN users u WHERE c.name IN ('general', 'random', 'engineering') LIMIT 10;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3zbWDt6ojYujPWx.90374b62ac33 --database kfwzqu7hYQe99YqbXVh5nv --execute INSERT IGNORE INTO channel_members (channelId, userId, role) SELECT c.id, u.id, 'member' FROM channels c CROSS JOIN users u WHERE c.name IN ('general', 'random', 'engineering') LIMIT 10;",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 74
+}

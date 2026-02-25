@@ -35,6 +35,24 @@ async function startServer() {
   app.use(express.urlencoded({ limit: "50mb", extended: true }));
   // OAuth callback under /api/oauth/callback
   registerOAuthRoutes(app);
+  // File upload endpoint
+  const multer = await import("multer");
+  const upload = multer.default({ storage: multer.memoryStorage(), limits: { fileSize: 10 * 1024 * 1024 } });
+  app.post("/api/upload", upload.single("file"), async (req: any, res: any) => {
+    try {
+      if (!req.file) return res.status(400).json({ error: "No file provided" });
+      const { storagePut } = await import("../storage");
+      const { nanoid } = await import("nanoid");
+      const ext = req.file.originalname.split(".").pop() || "bin";
+      const key = `uploads/${nanoid()}.${ext}`;
+      const { url } = await storagePut(key, req.file.buffer, req.file.mimetype);
+      res.json({ url, key });
+    } catch (err: any) {
+      console.error("Upload error:", err);
+      res.status(500).json({ error: "Upload failed" });
+    }
+  });
+
   // tRPC API
   app.use(
     "/api/trpc",
