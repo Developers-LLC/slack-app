@@ -76,3 +76,4 @@
 ## Documentation
 - [x] user_guide.md - End-user guide for the Slack app
 - [x] developer_guide.md - Technical developer guide for the Slack app
+- [x] README.md at project root with links to all doc/ markdown files
